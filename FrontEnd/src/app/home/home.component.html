@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row justify-content-center">
+        <h2><b>Welcome {{this.service.CurrentCustomer.name}}</b></h2>
+            <table class="table table-lg">
+                <tbody>
+                    <tr>
+                        <th>Data</th>
+                        <td>{{this.service.CurrentCustomerPlan.data}}GB/Day</td>
+                    </tr>
+                    <tr>
+                        <th>Voice</th>
+                        <td>{{this.service.CurrentCustomerPlan.voice}}</td>
+                    </tr>
+                    <tr>
+                        <th>SMS</th>
+                        <td>{{this.service.CurrentCustomerPlan.sms}} SMS/Day</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>{{this.service.CurrentCustomerPlan.price | currency:"USD"}}</td>
+                    </tr>
+                    <tr>
+                        <th>Validity</th>
+                        <td>{{this.service.CurrentCustomerPlan.validity}} Days</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="this.service.CurrentCustomerPlan.validity>30">
+                <p>Automatic Recharge is Not Available</p>
+            </div>
+            <div *ngIf="this.service.AutoRecharge && this.service.CurrentCustomerPlan.validity<=30">
+                <p>Automatic Recharge is Enabled </p>
+            </div>
+            <div *ngIf="!this.service.AutoRecharge  && this.service.CurrentCustomerPlan.validity<=30">
+                <p>Automatic Recharge is Disabled </p>
+            </div>
+    </div>
+</div>

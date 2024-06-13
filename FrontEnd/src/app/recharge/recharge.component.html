@@ -1,0 +1,118 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h2 class="text-center mb-4"><b>Choose a Plan</b></h2>
+            <form #RechargeForm="ngForm" (ngSubmit)="RechargeUser(RechargeForm)">
+                <div class="mb-3">
+                    <label for="RechargePlans" class="form-label">Recharge Plans</label>
+                    <select class="form-select" name="RechargeOption" id="RechargeOption" ngModel>
+                        <option *ngFor="let r of service.RechargeOptions" [value]="r.price">{{ r.price | currency:"USD" }}</option>
+                    </select>
+                </div>
+                <div class=mb-3 *ngIf="RechargeForm.value.RechargeOption==10">
+                    <table class="table table-lg">
+                        <tr>
+                            <th>Price</th>
+                            <td>{{this.service.RechargeOptions[0].price}}</td>
+                        </tr>
+                        <tr>
+                            <th>Data</th>
+                            <td>{{this.service.RechargeOptions[0].data}}</td>
+                        </tr>
+                        <tr>
+                            <th>Voice</th>
+                            <td>{{this.service.RechargeOptions[0].voice}}</td>
+                        </tr>
+                        <tr>
+                            <th>SMS</th>
+                            <td>{{this.service.RechargeOptions[0].sms}}</td>
+                        </tr>
+                        <tr>
+                            <th>Validity</th>
+                            <td>{{this.service.RechargeOptions[0].validity}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class=mb-3 *ngIf="RechargeForm.value.RechargeOption==20">
+                    <table class="table table-lg">
+                        <tr>
+                            <th>Price</th>
+                            <td>{{this.service.RechargeOptions[1].price}}</td>
+                        </tr>
+                        <tr>
+                            <th>Data</th>
+                            <td>{{this.service.RechargeOptions[1].data}}</td>
+                        </tr>
+                        <tr>
+                            <th>Voice</th>
+                            <td>{{this.service.RechargeOptions[1].voice}}</td>
+                        </tr>
+                        <tr>
+                            <th>SMS</th>
+                            <td>{{this.service.RechargeOptions[1].sms}}</td>
+                        </tr>
+                        <tr>
+                            <th>Validity</th>
+                            <td>{{this.service.RechargeOptions[1].validity}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class=mb-3 *ngIf="RechargeForm.value.RechargeOption==50">
+                    <table class="table table-lg">
+                        <tr>
+                            <th>Price</th>
+                            <td>{{this.service.RechargeOptions[2].price}}</td>
+                        </tr>
+                        <tr>
+                            <th>Data</th>
+                            <td>{{this.service.RechargeOptions[2].data}}</td>
+                        </tr>
+                        <tr>
+                            <th>Voice</th>
+                            <td>{{this.service.RechargeOptions[2].voice}}</td>
+                        </tr>
+                        <tr>
+                            <th>SMS</th>
+                            <td>{{this.service.RechargeOptions[2].sms}}</td>
+                        </tr>
+                        <tr>
+                            <th>Validity</th>
+                            <td>{{this.service.RechargeOptions[2].validity}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class=mb-3 *ngIf="RechargeForm.value.RechargeOption==200">
+                    <table class="table table-lg">
+                        <tr>
+                            <th>Price</th>
+                            <td>{{this.service.RechargeOptions[3].price/2}} (Special 50% Discount)</td>
+                        </tr>
+                        <tr>
+                            <th>Data</th>
+                            <td>{{this.service.RechargeOptions[3].data}}</td>
+                        </tr>
+                        <tr>
+                            <th>Voice</th>
+                            <td>{{this.service.RechargeOptions[3].voice}}</td>
+                        </tr>
+                        <tr>
+                            <th>SMS</th>
+                            <td>{{this.service.RechargeOptions[3].sms}}</td>
+                        </tr>
+                        <tr>
+                            <th>Validity</th>
+                            <td>{{this.service.RechargeOptions[3].validity}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" class="btn btn-custom">Recharge</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

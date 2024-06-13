@@ -1,0 +1,78 @@
+/* Optional: Add some top margin to the container */
+.container {
+    padding: 20px;
+    background-color: #f5f5dc;
+}
+
+h2{
+    text-align: center;
+    color: #009688;
+}
+
+/* Optional: Add some bottom margin to the form */
+form {
+    margin-bottom: 20px;
+}
+
+
+/* Table styles */
+.table {
+    width: 90%; /* Adjusted width */
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+/* Table header */
+.table th {
+    background-color: #009688; /* Dark teal color */
+    color: #fff; /* White text color */
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table data */
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd; /* Light gray border */
+}
+
+/* Table data - colorful */
+.table td:first-child {
+    color: #0056b3; /* Dark blue color */
+}
+
+.table td:last-child {
+    color: #009688; /* Dark teal color */
+}
+
+
+/* Custom class for button background color */
+.btn-custom {
+    background-color: #009688; /* Desired background color */
+    color: #fff; /* Text color */
+}
+
+.btn-custom:hover {
+    background-color: #00796b; /* Darker background color on hover */
+}
+
+
+/* Optional: Add custom colors */
+.form-label {
+    color: #009688; /* Blue color for form labels */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Blue background color for primary button */
+    border-color: #007bff; /* Blue border color for primary button */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue background color on hover */
+    border-color: #0056b3; /* Darker blue border color on hover */
+}

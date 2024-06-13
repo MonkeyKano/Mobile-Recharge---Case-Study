@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container">
+    <h2 class="mb-4"><b>Recharge History</b></h2>
+    <table class="table table-bordered">
+        <thead class="table-primary">
+            <tr>
+                <th>Price</th>
+                <th>Data</th>
+                <th>Voice</th>
+                <th>SMS</th>
+                <th>Validity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hist of service.AllCustomerPlans">
+                <ng-container *ngIf="hist.phoneNumber == service.CurrentCustomer.phoneNumber">
+                    <td>{{ hist.price }}</td>
+                    <td>{{ hist.data }}</td>
+                    <td>{{ hist.voice }}</td>
+                    <td>{{ hist.sms }}</td>
+                    <td>{{ hist.validity }}</td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

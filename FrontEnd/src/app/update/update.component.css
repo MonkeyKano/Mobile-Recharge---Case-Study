@@ -1,0 +1,61 @@
+/* Styles for the container */
+.container {
+    background-color: #f5f5dc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Optional: centers items vertically */
+}
+
+/* Styles for the paragraph */
+.container p {
+    color: #009688; /* Text color */
+    font-size: 18px; /* Font size */
+}
+
+/* Styles for the form labels */
+.form-label {
+    color: #009688; /* Text color */
+}
+
+/* Styles for the form inputs */
+.form-control {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Bottom margin */
+}
+
+.btn-custom {
+    background-color: #009688; /* Desired background color */
+    color: #fff; /* Text color */
+}
+
+/* Styles for the submit button */
+.btn-primary {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+.btn-primary:disabled {
+    cursor: not-allowed; /* Not allowed cursor */
+}
+
+a{
+    text-decoration: none;
+}

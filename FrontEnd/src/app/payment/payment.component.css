@@ -1,0 +1,12 @@
+
+.container {
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5dc;
+}
+.mb-3{
+    margin-top: 20px;
+}
+button{
+    margin-left: 220px;
+}

@@ -1,0 +1,20 @@
+.container {
+    background-color: #f5f5dc;
+    padding-top: 20px; /* Optional: Add some top padding */
+}
+/* Increase the width of the navbar */
+.navbar {
+    width: 100%; /* Set the width to 100% */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the navbar */
+    background-color: #009688;
+}
+.navbar-nav .nav-link {
+    color: white; /* Set the font color to white */
+}
+.navbar-brand{
+    color: white;
+}
+.navbar-nav .nav-link:hover {
+    color: black; /* Set the font color to black on hover */
+}

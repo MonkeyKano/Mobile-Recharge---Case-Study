@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h2 class="text-center" style="color: #009688;">Select any Payment Method</h2>
+            <form #PaymentForm="ngForm">
+                <div class="mb-3">
+                    <select class="form-select" name="PayMethod" ngModel>
+                        <option value="CCDC">Credit/Debit Card</option>
+                        <option value="NB">Net Banking</option>
+                        <option value="DW">Digital Wallet</option>
+                    </select>
+                </div>
+            </form>
+            <div *ngIf="PaymentForm.value.PayMethod=='CCDC'" class="mb-3">
+                <input type="text" class="form-control" placeholder="Enter Card Number" name="CardNumber" ngModel required pattern="\d{10}" #CardNumber="ngModel">
+                <div *ngIf="CardNumber.invalid && (CardNumber.dirty || CardNumber.touched)" class="text-danger">
+                    <div *ngIf="CardNumber.errors?.['required']">Card Number is required</div>
+                    <div *ngIf="CardNumber.errors?.['pattern']">Card Number must be Exactly 10 Digits</div>
+                </div>
+                <button class="btn btn-primary mt-3 text-center" style="background-color: #009688;" (click)="RedirectToHome()">Pay</button>
+            </div>
+            <div *ngIf="PaymentForm.value.PayMethod=='NB'" class="mb-3">
+                <input type="text" class="form-control" placeholder="Enter Account Number" name="AccountNumber" ngModel required 
+       pattern="[A-Z]{4}\d{4}" #AccountNumber="ngModel">
+<div *ngIf="AccountNumber.invalid && (AccountNumber.dirty || AccountNumber.touched)" class="text-danger">
+    <div *ngIf="AccountNumber.errors?.['required']">
+        Account Number is required
+    </div>
+    <div *ngIf="AccountNumber.errors?.['pattern']">
+        Account Number must start with 4 capital letters followed by 4 numbers
+    </div>
+</div>
+
+                <input type="text" class="form-control mt-3" placeholder="Enter your PIN" name="PIN" ngModel required pattern="\d{4}" #PIN="ngModel">
+                <div *ngIf="PIN.invalid && (PIN.dirty || PIN.touched)" class="text-danger">
+                    <div *ngIf="PIN.errors?.['required']">PIN is required</div>
+                    <div *ngIf="PIN.errors?.['pattern']">PIN must be Exactly 4 Digits</div>
+                </div>
+                <button class="btn btn-primary mt-3 text-center" style="background-color: #009688;" (click)="RedirectToHome()">Pay</button>
+            </div>
+            <div *ngIf="PaymentForm.value.PayMethod=='DW'" class="mb-3" >
+                <input type="text" class="form-control" placeholder="Enter UPI Number" name="UPINumber" ngModel required pattern="^UPI\d{4}$" #UPINumber="ngModel">
+                <div *ngIf="UPINumber.invalid && (UPINumber.dirty || UPINumber.touched)"
+     class="text-danger">
+     <div *ngIf="UPINumber.errors?.['required']">
+        UPI Number is required
+    </div>
+    <div *ngIf="UPINumber.errors?.['pattern']">
+  UPI Number must start with "UPI" followed by 4 digits
+</div>
+                </div>
+                <input type="text" class="form-control mt-3" placeholder="Enter your PIN" name="PIN" ngModel required pattern="\d{4}" #PIN="ngModel">
+                <div *ngIf="PIN.invalid && (PIN.dirty || PIN.touched)" class="text-danger">
+                    <div *ngIf="PIN.errors?.['required']">PIN is required</div>
+                    <div *ngIf="PIN.errors?.['pattern']">PIN must be Exactly 4 Digits</div>
+                </div>
+                <button class="btn btn-primary mt-3 text-center" style="background-color: #009688;" (click)="RedirectToHome()">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>

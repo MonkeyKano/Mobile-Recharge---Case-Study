@@ -1,0 +1,58 @@
+/* Styles for the main container */
+.container {
+    background-color: #f5f5dc;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Styling for headings */
+h1, h2 {
+    color: #0056b3; /* Dark blue color */
+}
+
+/* Styling for paragraphs */
+p {
+    color: #333; /* Dark gray color */
+}
+
+/* Styling for form labels */
+label {
+    color: #009688; /* Dark teal color */
+}
+
+/* Add this CSS to adjust the width of the login form */
+.login-form-wrapper {
+    width: 100%; /* Set the width to 100% or adjust as needed */
+  }  
+
+/* Styling for form inputs */
+input[type="text"], input[type="password"] {
+    color: #009688; /* Dark teal color */
+    border-color: #009688; /* Dark teal border color */
+    width: 100%; /* Make inputs fill container width */
+    padding: 8px; /* Add padding for better appearance */
+    margin-bottom: 10px; /* Add some space between inputs */
+}
+
+/* Styling for submit button */
+button[type="submit"] {
+    background-color: #009688; /* Dark teal color */
+    border-color: #009688; /* Dark teal border color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Add padding for better appearance */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styling for anchor links */
+a {
+    color: #009688; /* Dark teal color */
+    text-decoration: none; /* Remove underline from links */
+    margin-top: 10px; /* Add some space above links */
+}
+
+/* Hover effect for anchor links */
+a:hover {
+    color: #00796b; /* Dark teal color with slight change */
+    text-decoration: underline; /* Add underline on hover */
+}

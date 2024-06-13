@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Brand Ozone</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Your custom CSS -->
+  <style>
+    /* Add your custom CSS here */
+    /* Custom styles for headings */
+    h1, h2 {
+      color: #009688; /* Teal color for headings */
+    }
+    /* Custom styles for buttons */
+    .btn-primary {
+      background-color: #009688; /* Teal color for primary buttons */
+      border-color: #009688; /* Teal color for button borders */
+    }
+    /* Custom styles for links */
+    a {
+      color: #009688; /* Teal color for links */
+    }
+    a:hover {
+      color: #00796b; /* Darker teal color on hover for links */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="fw-bold">The Brand Ozone</h1>
+    <p>We are a leading telecom company in India and offer a wide bouquet of integrated services.</p>
+  </div>
+  <div class="container">
+    <div class="col-lg-6 d-flex flex-column align-items-center">
+      <h2>Enter Your Login Credentials</h2>
+      <form #LoginForm="ngForm" (ngSubmit)="CheckLogin(LoginForm)" class="w-100">
+        <div class="login-form-wrapper d-flex flex-column">
+          <div class="mb-3">
+            <label for="PhoneNumber" class="form-label">PhoneNumber</label>
+            <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Enter Your PhoneNumber" ngModel required>
+            <div *ngIf="LoginForm.controls['PhoneNumber'].invalid && (LoginForm.controls['PhoneNumber'].dirty || LoginForm.controls['PhoneNumber'].touched)">
+              <div *ngIf="LoginForm.controls['PhoneNumber'].errors" class="text-danger">Phone Number is required</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="Enter Your Password" ngModel required>
+            <div *ngIf="LoginForm.controls['Password'].invalid && (LoginForm.controls['Password'].dirty || LoginForm.controls['Password'].touched)">
+              <div *ngIf="LoginForm.controls['Password'].errors" class="text-danger">Password is required</div>
+            </div>
+            <div class="text-danger" *ngIf="!this.service.CheckLogin">
+              PhoneNumber or Password is Wrong. Please Check Again
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="LoginForm.invalid">Login</button>
+        </div>
+      </form>
+      <p>Or if you are new here? <a [routerLink]="[]" (click)="RedirectToRegister()">Register</a></p>
+    </div>
+  </div>
+  <div class="container">
+    <h2>About Us</h2>
+    <p>Ozone was born free to unleash the world of possibilities and opportunities with a determination to connect people across the globe. We are a perfect mix of energy, creativity, dedication and ambition to become the best telecom service provider. We are a skilled team with a motive to grow and we are constantly working and developing infrastructure to introduce newer and smarter technologies. We offer enterprise services including national and international long-distance services to carriers. We have more than 406 million subscribers. We are constantly working to support the growing demand for data and telecom services. We are delivering effective products to contribute towards creating “Digital India”, by helping millions of voices to connect and grow for a brighter tomorrow. As India's leading telecommunications company, the Ozone brand has played the role of a major catalyst in India's reforms, contributing to its economic resurgence.</p>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
